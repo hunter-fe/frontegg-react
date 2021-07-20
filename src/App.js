@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useAuth, AdminPortal } from '@frontegg/react'
+
 function App() {
+  const { user, isAuthenticated } = useAuth();
+  const handleClick = () => {
+    AdminPortal.show();
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +25,13 @@ function App() {
           Learn React
         </a>
       </header>
+      {isAuthenticated && (
+        <div>
+          <img src={user.profilePictureUrl} alt={user.name} />
+          <span>{user.name}</span>
+        </div>
+      )}
+      <button onClick={handleClick}>Settings</button>
     </div>
   );
 }
