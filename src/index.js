@@ -1,22 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-import { FronteggProvider } from '@frontegg/react'
-
-const contextOptions = { 
-  baseUrl: 'https://maxx.frontegg.com',
- };
- const headerImage = 'https://assets.frontegg.com/public-frontegg-assets/acme-logo.svg';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Ex from "./ex";
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <FronteggProvider contextOptions={contextOptions} headerImage={headerImage} version="next">
-<App></App>
-  </FronteggProvider>,
-  document.getElementById('root')
+
+    <Ex></Ex>,
+      document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
